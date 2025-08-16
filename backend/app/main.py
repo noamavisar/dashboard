@@ -27,7 +27,7 @@ app.add_middleware(
 @app.get("/api/holdings", response_model=list[schemas.Holding])
 def read_holdings():
     """Return current portfolio holdings."""
-    return ibkr.get_mock_holdings()
+    return ibkr.get_holdings()
 
 @app.websocket("/ws/updates")
 async def websocket_endpoint(websocket: WebSocket):

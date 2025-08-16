@@ -12,7 +12,11 @@ client = TestClient(app)
 def test_holdings():
     r = client.get("/api/holdings")
     assert r.status_code == 200
-    assert isinstance(r.json(), list)
+    data = r.json()
+    assert isinstance(data, list)
+    # demo mode should return example positions
+    assert len(data) >= 3
+    assert {h["symbol"] for h in data} >= {"AAPL", "MSFT", "GOOG"}
 
 
 def test_analytics():

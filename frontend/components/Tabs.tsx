@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Analytics from './Analytics'
 import OptimizationChart from './OptimizationChart'
+import Snapshot from './Snapshot'
 
 const tabs = ['Current Snapshot', 'Data Analysis & Insights', 'Portfolio Optimization']
 
@@ -20,7 +21,7 @@ export default function Tabs() {
         ))}
       </div>
       <div>
-        {active === 0 && <div>Real-time snapshot goes here.</div>}
+        {active === 0 && <Snapshot />}
         {active === 1 && <Analytics />}
         {active === 2 && <OptimizationChart />}
       </div>

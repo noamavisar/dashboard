@@ -11,6 +11,7 @@ Modular and extensible dashboard for tracking portfolios, analyzing data, and ru
 
 ## Getting Started
 1. Copy `.env.example` to `.env` and fill in credentials.
+   - Leave `DEMO_MODE=true` to explore the app with an example portfolio. Set it to `false` and supply IBKR keys to connect to a real account.
 2. Build and run all services:
    ```bash
    docker-compose up --build
@@ -35,4 +36,4 @@ backend/    # FastAPI application and ingestion stubs
 frontend/   # Next.js dashboard UI
 ```
 
-IBKR connectivity is represented with mock data in `backend/app/ibkr.py`. Replace with real API calls and add analytics or optimization logic as needed.
+IBKR connectivity is represented with mock data in `backend/app/ibkr.py`. Replace with real API calls and disable demo mode when ready to connect to a live account.
